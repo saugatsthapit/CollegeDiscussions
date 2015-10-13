@@ -1,0 +1,17 @@
+
+	{% load staticfiles %}
+	<link href="{% static "CSS/searchbar.css" %}" rel="stylesheet" type="text/css">	
+
+
+	<div id='searchbar'>
+		<div id="homepage">
+			<a href="{% url  'questions:questions' %}">College</br>Discussion</a>
+		</div>
+		<div id="searchtext">
+			{{ form.search }}
+		</div>
+		<div id="profile">
+			<img src="{% static "images/profile.png" %}">
+		</div>
+	</div>
+

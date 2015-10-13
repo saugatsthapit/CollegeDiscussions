@@ -1,0 +1,10 @@
+<!-- <div id = "SearchBar">
+	<a href="{% url  'questions:questions' %}">College </br>Discussions</a>
+	<input type ="text" value="Search">
+</div> -->
+
+{% include "searchbar.html" with form=form %}
+ 
+{% for q in latest_questions %}
+	<h4> <a href="/questions/{{q.id}}">{{q.question_text}} </a></h4>
+{% endfor %}

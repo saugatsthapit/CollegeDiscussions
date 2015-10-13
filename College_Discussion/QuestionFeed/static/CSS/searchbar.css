@@ -1,0 +1,45 @@
+#searchbar{
+	background-color:#5462ED;
+	border-radius: 5px;
+	margin:-10px;
+
+}
+
+#searchbar #homepage a{
+	text-decoration:none;
+	color:white;
+	font-size:0.85em;
+}
+
+#homepage{
+	vertical-align:middle;
+	display: table-cell;
+	width: 140px;
+	padding-left: 16px;
+	
+}
+
+#searchtext{
+	display: table-cell;
+	padding-top:8px;
+	padding-bottom:8px;
+}
+
+#id_search{
+	height:30px;
+	width: 500px;
+	border-radius:5px;
+}
+
+#profile{
+	display: table-cell;
+	width:600px;
+	vertical-align: middle;
+	
+}
+
+#profile img{
+	height:30px;
+	width:30px;
+	float:right;
+}
