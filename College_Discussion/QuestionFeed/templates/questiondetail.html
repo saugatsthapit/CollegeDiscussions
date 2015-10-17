@@ -1,1 +1,36 @@
-{% include "searchbar.html" with form=form %}
+<head>
+	{% load staticfiles %}
+	<link href = "{% static "CSS/questiondetail.css" %}" type="text/css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="{% static "script/questiondetail.js" %}"></script>
+</head>
+
+<body>
+	{% include "searchbar.html" with form=form %}
+
+
+	<div id="question">
+		<h6>{{question.user}} asked: </h6>
+		<h4>{{question.question_text}}</h4>
+	</div>
+	<div>
+		<label id="answerquestion"> Answer the question </label>
+	</div>
+	<div id="writeanswer">
+		<form action="{% url 'questions:questiondetail' question.id %}" method="post">
+			{% csrf_token %}
+			{{ answerquestion.as_p }}
+			<input type="submit" value="SUBMIT">
+			<button id="cancel" type="button" >CANCEL</button>
+		</form>
+	</div>
+	<div id="answers">
+		{% for answer in question.answer_set.all %}
+		<h6>{{ answer.user}} answered:</h6>
+		<h4>	{{answer.answer_text}}</h4>
+		{% endfor %}
+	</div>
+</body>
+
+
+

@@ -1,10 +1,54 @@
-<!-- <div id = "SearchBar">
-	<a href="{% url  'questions:questions' %}">College </br>Discussions</a>
-	<input type ="text" value="Search">
-</div> -->
-
-{% include "searchbar.html" with form=form %}
+ <head>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	{% load staticfiles %}
+	<link href="{% static "CSS/questions.css" %}" rel="stylesheet" type="text/css">
+	 
+	 <script type="text/javascript" src="{% static "script/questionspage.js" %}"></script>
+ </head>
+  
+ <body>
+	   {% include "searchbar.html" with form=form %}
+	   </br>
+	   <div>
+	   <label id="askquestion" >Ask a Question</label>
+	   {% for q in latest_questions %}
+	   	<h4> <a href="/questions/{{q.id}}">{{q.question_text}} </a></h4>
+	   {% endfor %}
+	  </div>
  
-{% for q in latest_questions %}
-	<h4> <a href="/questions/{{q.id}}">{{q.question_text}} </a></h4>
-{% endfor %}
+	  <div id="askquestionpopup">
+		  <form action="{% url 'questions:questions' %}" method="post">
+			  {% csrf_token %}
+		  <table>
+	 	 		<tr>
+					<td id="questionlabel">Question: </td>
+					<td>{{ askquestion.question }}</td>
+				</tr>
+				<tr>
+					<td>Tags: </td>
+					<td>{{ askquestion.tags }}</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>{{ askquestion.anonymous }} Anonymous</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr id="buttonrow">
+					<td colspan="2" ><button id="askbutton" type="submit" value="ASK">ASK</button>
+						<button type="button" id="canceldialog" value="CANCEL">CANCEL</button>
+					</td>
+				</tr>
+	 	  </table>
+	  </form>
+	  </div> 
+	  
+ 	 
+ </body>
+
+
+

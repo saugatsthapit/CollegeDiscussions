@@ -1,0 +1,41 @@
+table tr td{
+	padding: 10px;
+}
+
+#questionlabel{
+	vertical-align: top;
+}
+
+a{
+	text-decoration: none;
+	color:black;
+}
+
+a:hover{
+	color:blue;
+}
+
+#askquestion{
+	color:blue;
+}
+
+#buttonrow td{
+	text-align:center;
+}
+
+#askbutton, #canceldialog {
+	height: 30px;
+	width:90px;
+	text-align:center;
+	border-radius:5px;
+	background-color:white;
+	color:blue;
+}
+
+#askbutton{
+	margin-left: 25px;
+}
+
+#canceldialog{
+	margin-left: 30px;
+}

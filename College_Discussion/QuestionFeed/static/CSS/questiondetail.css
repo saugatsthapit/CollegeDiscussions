@@ -1,0 +1,10 @@
+#answerquestion{
+	color:blue;
+	
+}
+
+#writeanswer{
+	border: 1px solid blue;
+	width: 350px;
+	text-align:center;
+}

@@ -5,6 +5,7 @@ class Question(models.Model):
     question_text = models.CharField(max_length=300)
     user = models.CharField(max_length=30)
     asked_date = models.DateTimeField('asked date')
+    tags= models.CharField(max_length=100, null=True, blank=True)
     
     
     def __str__(self):
